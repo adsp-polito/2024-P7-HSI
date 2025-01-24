@@ -1,6 +1,6 @@
 # Hybrid Random Forest and CNN Framework for Hyperspectral Oil-Water Classification
 
-This repository contains the implementation, datasets, and results for the paper **"A Hybrid Random Forest and CNN Framework for Tile-Wise Oil-Water Classification in Hyperspectral Images"**, authored by Mehdi Nickzamir and S. Mohammad Sheikh Ahmadi.
+This repository contains the implementation, datasets (hosted on Hugging Face), and results for the paper **"A Hybrid Random Forest and CNN Framework for Tile-Wise Oil-Water Classification in Hyperspectral Images"**, authored by Mehdi Nickzamir and S. Mohammad Sheikh Ahmadi.
 
 ## Overview
 
@@ -20,29 +20,14 @@ Oil spills are devastating for the environment and human activities, requiring t
 | `train.ipynb`               | Training script for the hybrid RF+CNN model.                                                                                                  |
 | `test.ipynb`                | Testing script for evaluating the model.                                                                                                     |
 | `preprocessing.ipynb`       | Preprocessing pipeline including noisy channel removal, normalization, PCA, tiling, and augmentation.                                         |
-| `saved_models/`             | Contains trained models in `.keras` format.                                                                                                   |
-| `original_datasets/`        | Raw HOSD dataset used in the project.                                                                                                         |
-| `preprocessed_datasets/`    | Preprocessed datasets ready for model training and evaluation.                                                                                |
 | `ADSP.pdf`                  | Full research paper detailing the methodology, experiments, and results.                                                                      |
 
-### 2. **Key Sections**
-- **Data Preprocessing**: Explained in `preprocessing.ipynb`.
-  - Removes noisy channels.
-  - Normalizes and reduces dimensionality using PCA.
-  - Splits and tiles datasets.
-  - Applies augmentation to balance class distributions.
-- **Model Architecture**: Explained in `train.ipynb`.
-  - Random Forest for initial pixel-wise classification.
-  - CNN for refining spatial context.
-- **Evaluation**: Results and metrics are detailed in `test.ipynb` and the paper (`ADSP.pdf`).
+### 2. **Datasets**
+The datasets and models are hosted on [Hugging Face](https://huggingface.co). Links to the recourses:
+- [Original HOSD Dataset](https://huggingface.co/datasets/smsag99/OIL_SPILL_HSI)
+- [Preprocessed Dataset](https://huggingface.co/datasets/smsag99/OIL_SPILL_HSI_AUGMENTED)
+- [Saved Models](https://huggingface.co/smsag99/OIL_SPILL_Model)
 
-## Getting Started
-
-### Prerequisites
-- Python 3.8 or later
-- TensorFlow, scikit-learn, numpy, pandas, and other libraries (see `requirements.txt`).
-
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/yourusername/hybrid-rf-cnn-oil-spill-classification.git
+These datasets include:
+1. **Original Dataset**: Raw HOSD dataset with 18 hyperspectral images.
+2. **Preprocessed Dataset**: Dataset after noisy channel removal, normalization, PCA, and tiling.
