@@ -1,6 +1,12 @@
+This repository is for educational purposes only. Any use of this code, dataset, or methodology for research, commercial, or academic purposes is strictly prohibited without prior written consent from the authors.
+
 # Hybrid Random Forest and CNN Framework for Hyperspectral Oil-Water Classification
 
 This repository contains the implementation, datasets (hosted on Hugging Face), and results for the paper **"A Hybrid Random Forest and CNN Framework for Tile-Wise Oil-Water Classification in Hyperspectral Images"**, authored by Mehdi Nickzamir and S. Mohammad Sheikh Ahmadi.
+
+
+
+
 
 ## Overview
 
